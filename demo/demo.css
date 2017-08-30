@@ -1,0 +1,19 @@
+@media print{
+
+    body * {
+        visibility: hidden;
+        display: block;
+        box-sizing: content-box;
+    }
+    .test {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 600px;
+        width: 1000px;
+    }
+    .test2{
+        page-break-after: avoid;
+        page-break-before: always;
+    }
+}

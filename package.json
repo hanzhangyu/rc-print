@@ -60,6 +60,7 @@
     "react-dom": "^15.5.0",
     "react-test-renderer": "^15.5.4",
     "rimraf": "^2.5.4",
+    "style-loader": "~0.12.3",
     "webpack": "^1.12.9",
     "webpack-dev-server": "1.12.1"
   },
