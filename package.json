@@ -1,0 +1,74 @@
+{
+  "name": "rc-print",
+  "version": "0.0.1",
+  "description": "Create a iframe to print easily",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hanzhangyu/rc-print"
+  },
+  "homepage": "https://github.com/hanzhangyu/rc-print",
+  "keywords": [
+    "print",
+    "react",
+    "iframe"
+  ],
+  "author": "paulhan <zhangyu.han@outlook.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha test/.setup.js test/**/*-test.js --delay",
+    "build": "rimraf lib && babel src --out-dir lib && npm run demo",
+    "demo": "webpack",
+    "dev": "webpack --watch",
+    "prepublish": "npm run build",
+    "start": "webpack-dev-server --watch",
+    "coveralls": "coveralls"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.11.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.0",
+    "babel-core": "^6.3.15",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-transform-class-properties": "*",
+    "babel-plugin-transform-es3-member-expression-literals": "*",
+    "babel-plugin-transform-es3-property-literals": "*",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "coveralls": "^2.13.1",
+    "css-loader": "~0.16.0",
+    "enzyme": "^2.8.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-babel": "^3.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2 || ^4.0.0",
+    "eslint-plugin-react": "^6.9.0",
+    "expect": "^1.20.2",
+    "file-loader": "~0.8.4",
+    "jsx-loader": "~0.13.2",
+    "jsdom": "^9.6.0",
+    "mocha": "^3.0.2",
+    "prop-types": "^15.0.0",
+    "react": "^15.5.0",
+    "react-dom": "^15.5.0",
+    "react-test-renderer": "^15.5.4",
+    "rimraf": "^2.5.4",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "1.12.1"
+  },
+  "peerDependencies": {
+    "react": ">=0.13.2 || ^0.14 || ^15.0.0 || >=16.0.0-alpha.1 <17.0.0",
+    "prop-types": ">=15.0.0"
+  },
+  "files": [
+    "lib",
+    "src"
+  ]
+}
