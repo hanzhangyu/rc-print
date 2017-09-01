@@ -53,9 +53,9 @@ class Demo1 extends Component {
                 </button>
                 <Print ref="test" title="this is Demo1`s title">
                     <div>
-                        <p className="red">first page</p>
-                        <p className="green">second page</p>
-                        <p className="pink">third page</p>
+                        <p className="red"> first page</p>
+                        <p className="green" >second page</p>
+                        <p className="pink">third page </p>
                     </div>
                 </Print>
             </div>
