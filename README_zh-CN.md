@@ -1,19 +1,17 @@
 
 # rc-print
 
-Create a `iframe` or `new window`print a part of page what you want. Considering the [a-x-/react-easy-print](https://github.com/a-x-/react-easy-print) if you don`t like to use these two methods
+创建 `iframe`或者 `新窗口`打印你想要的一部分。如果你不喜欢使用这两种方式不妨考虑下 [a-x-/react-easy-print](https://github.com/a-x-/react-easy-print)
 
 > travis is comming soon
 
-[中文前看这里](./README_zh-CN.md)
-
-# 1. Install
+# 1. 安装
 
 ```sh
 npm install --save rc-print
 ```
 
-#### How to run the demo:
+#### 如何使用demo:
 
 ```sh
 git clone git@github.com:hanzhangyu/rc-print.git
@@ -23,9 +21,9 @@ npm install
 npm start
 ```
 
-then open [http://127.0.0.1:8080/](http://127.0.0.1:8080/) in your browser.
+然后在浏览器打开 [http://127.0.0.1:8080/](http://127.0.0.1:8080/)。
 
-#### How to run the test:
+#### 如何单元测试:
 
 ```sh
 npm run test
@@ -34,10 +32,10 @@ npm run test
 
 # 2. Usage  
 
-Use media query to hide the part which is no need to print in the `Print` component.
+在`Print`组件内不需要打印的请使用媒体查询隐藏。
 
 ### demo1：
-Print the `dom` which is rendered and inserted all the files of head
+将渲染出的dom使用iframe打印出来，并且会插入head的所有文件
 ```js
 class Demo1 extends Component {
     render() {
@@ -64,7 +62,7 @@ class Demo1 extends Component {
 }
 ```
 ### demo2
-The rendered DOM is displayed in the new window and printed immediately, and not inserted head and style in body. Use `otherStyle` to query media this time.
+将渲染出的dom使用显示在新窗口并立即打印。不插入head也不插入body中的style标签，此时媒体查询可以使用`otherStyle`
 ```js
 class Demo2 extends Component {
     render() {
@@ -103,7 +101,7 @@ class Demo2 extends Component {
 }
 ```
 ### demo3
-Doesn`t display the part which is need to be print. The part render async when printing.
+不显示需要打印的内容，当点击当点击打印的时候，异步渲染
 ```js
 function Demo3() {
     let printDom = null;
@@ -134,17 +132,17 @@ function Demo3() {
 # 3. Props
 | 名称          | 默认值                      | 描述                      |
 | -----------   | ----------------------------| --------------------------- |
-| insertHead    | true              |    Insert the head tag             |
-| bodyStyle     | false              |   Insert the style tag in the body (unrecommended method to write style)               | 
-| otherStyle    | undefined              |  Other styles are inserted into the style tag which will be created in the last of head             |
-| isIframe      | true     |   Use iframe if it`s true, otherwise new window will be used     |
-| iframeStyle   | 'position:absolute;width:0px;height:0px;'   |   The style of iframe  |
-| winStyle      | 'toolbar=no,menubar=no'          |   [The style of new window](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Window_features)          |
-| title         | undefined                      |  The title of iframe or new window                      |
-| preventDefault| false                      |  Replace the shortcut key of the browser's native print                    |
-| lazyRender    | false                      |  async render                     |
+| insertHead    | true              |   是否插入目前页面的head标签              |
+| bodyStyle     | false              |    是否插入目前页面的body中的style标签（不推荐写在body中）               | 
+| otherStyle    | undefined              |  其他的样式作为字符串插入head最后              |
+| isIframe      | true     |   true使用iframe，否则使用新窗口     |
+| iframeStyle   | 'position:absolute;width:0px;height:0px;'   |   iframe的样式   |
+| winStyle      | 'toolbar=no,menubar=no'          |   [新窗口的初始样式](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Window_features)          |
+| title         | undefined                      |  iframe或者新建窗口的title                     |
+| preventDefault| false                      |  是否替换浏览器原生的打印快捷键                      |
+| lazyRender    | false                      |  异步渲染                      |
 # 4. Feature
-Pick up the core code to separate with `react`, or find it. Besides, welcome to recommend.
+提取核心代码与react分离，或者寻找类似的无依赖代码，欢迎推荐。
 
 # 5. LICENSE
 MIT@[PaulHan](https://github.com/hanzhangyu).

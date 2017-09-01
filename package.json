@@ -16,7 +16,7 @@
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha test/.setup.js test/**/*-test.js --delay",
+    "test": "mocha test/.setup.js test/**/*-test.js",
     "build": "rimraf lib && babel src --out-dir lib && npm run demo",
     "demo": "webpack",
     "dev": "webpack --watch",
