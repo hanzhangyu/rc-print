@@ -1,7 +1,7 @@
 {
   "name": "rc-print",
   "version": "0.1.0",
-  "description": "Create a iframe to print easily",
+  "description": "Create a iframe or new window to print easily",
   "repository": {
     "type": "git",
     "url": "https://github.com/hanzhangyu/rc-print"

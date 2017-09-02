@@ -1,7 +1,7 @@
 
 # rc-print
 
-Create a `iframe` or `new window`print a part of page what you want. Considering the [a-x-/react-easy-print](https://github.com/a-x-/react-easy-print) if you don`t like to use these two methods
+Create a `iframe` or `new window` to print a part of page what you want. Considering the [a-x-/react-easy-print](https://github.com/a-x-/react-easy-print) if you don`t like to use these two methods
 
 > travis is comming soon
 
