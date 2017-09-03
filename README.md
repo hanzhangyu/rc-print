@@ -3,7 +3,7 @@
 
 Create a `iframe` or `new window` to print a part of page what you want. Considering the [a-x-/react-easy-print](https://github.com/a-x-/react-easy-print) if you don`t like to use these two methods
 
-> travis is comming soon
+> travis is coming soon
 
 [中文前看这里](./README_zh-CN.md)
 

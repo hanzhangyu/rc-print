@@ -28,7 +28,7 @@ describe('Test the Print`s index.js', function () {
         expect(component.instance().props.otherStyle).toEqual(null);
         expect(component.instance().props.isIframe).toEqual(false);
         expect(component.instance().props.iframeStyle)
-            .toEqual('position:absolute;width:0px;height:0px;left:-500px;top:-500px;');
+            .toEqual('position:absolute;width:0px;height:0px;');
         expect(component.instance().props.winStyle).toEqual('toolbar=no,menubar=no');
         expect(component.instance().props.title).toEqual('this.is a title');
         expect(component.instance().props.preventDefault).toEqual(false);
