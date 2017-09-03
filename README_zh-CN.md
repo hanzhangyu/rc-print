@@ -3,7 +3,10 @@
 
 创建 `iframe`或者 `新窗口`打印你想要的一部分。如果你不喜欢使用这两种方式不妨考虑下 [a-x-/react-easy-print](https://github.com/a-x-/react-easy-print)
 
-> travis is comming soon
+[![NPM version](https://img.shields.io/npm/v/rc-print.svg?style=flat)](https://npmjs.org/package/rc-print)
+[![Build Status](https://www.travis-ci.org/hanzhangyu/rc-print.svg?branch=master)](https://www.travis-ci.org/hanzhangyu/rc-print)
+[![Coverage Status](https://coveralls.io/repos/github/hanzhangyu/rc-print/badge.svg?branch=master)](https://coveralls.io/github/hanzhangyu/rc-print?branch=master)
+[![NPM downloads](http://img.shields.io/npm/dm/rc-print.svg?style=flat)](https://npmjs.org/package/rc-print)
 
 # 1. 安装
 
