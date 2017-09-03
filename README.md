@@ -3,7 +3,10 @@
 
 Create a `iframe` or `new window` to print a part of page what you want. Considering the [a-x-/react-easy-print](https://github.com/a-x-/react-easy-print) if you don`t like to use these two methods
 
-> travis is coming soon
+[![NPM version](https://img.shields.io/npm/v/rc-print.svg?style=flat)](https://npmjs.org/package/rc-print)
+[![Build Status](https://www.travis-ci.org/hanzhangyu/rc-print.svg?branch=master)](https://www.travis-ci.org/hanzhangyu/rc-print)
+[![Coverage Status](https://coveralls.io/repos/github/hanzhangyu/rc-print/badge.svg?branch=master)](https://coveralls.io/github/hanzhangyu/rc-print?branch=master)
+[![NPM downloads](http://img.shields.io/npm/dm/rc-print.svg?style=flat)](https://npmjs.org/package/rc-print)
 
 [中文前看这里](./README_zh-CN.md)
 

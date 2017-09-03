@@ -3,6 +3,9 @@
   "plugins": ["transform-es3-member-expression-literals", "transform-es3-property-literals", "transform-class-properties"],
   "env": {
     "development": {
+    },
+    "test": {
+      "plugins": [ "istanbul" ]
     }
   }
 }

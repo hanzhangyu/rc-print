@@ -1,6 +1,6 @@
 {
   "name": "rc-print",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Create a iframe or new window to print easily",
   "repository": {
     "type": "git",
@@ -16,13 +16,13 @@
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha test/.setup.js test/**/*-test.js",
+    "test": "cross-env NODE_ENV=test nyc mocha",
     "build": "rimraf lib && babel src --out-dir lib && npm run demo",
     "demo": "webpack",
     "dev": "webpack --watch",
     "prepublish": "npm run build",
     "start": "webpack-dev-server --watch",
-    "coveralls": "coveralls"
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
     "babel-runtime": "^6.11.6"
@@ -33,6 +33,7 @@
     "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.3",
     "babel-loader": "^6.2.0",
+    "babel-plugin-istanbul": "^4.1.4",
     "babel-plugin-transform-class-properties": "*",
     "babel-plugin-transform-es3-member-expression-literals": "*",
     "babel-plugin-transform-es3-property-literals": "*",
@@ -41,6 +42,7 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.24.1",
     "coveralls": "^2.13.1",
+    "cross-env": "^5.0.5",
     "css-loader": "~0.16.0",
     "enzyme": "^2.8.2",
     "eslint": "^3.19.0",
@@ -55,6 +57,7 @@
     "jsx-loader": "~0.13.2",
     "jsdom": "^9.6.0",
     "mocha": "^3.0.2",
+    "nyc": "^11.1.0",
     "prop-types": "^15.0.0",
     "react": "^15.5.0",
     "react-dom": "^15.5.0",
@@ -71,5 +74,16 @@
   "files": [
     "lib",
     "src"
-  ]
+  ],
+  "nyc": {
+    "include": [
+      "src/**/*.js"
+    ],
+    "require": [
+      "babel-register",
+      "./test/.setup.js"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  }
 }
