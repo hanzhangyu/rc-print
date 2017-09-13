@@ -1,5 +1,6 @@
-import React, {PropTypes, cloneElement} from 'react';
+import React, {cloneElement} from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 const arrayLikeMap = (arrayLike, fn) => {
     for (let i = 0; i < arrayLike.length; i++) {
@@ -48,7 +49,7 @@ export default class Print extends React.Component {
     componentDidMount() {
         if (this.props.preventDefault) {
             this.prevent = (e) => {
-                if (e.keyCode === 80 && e.ctrlKey) {
+                if (e.keyCode === 80 && (e.ctrlKey||e.metaKey)) {
                     e.preventDefault();
                     this.onPrint();
                 }
@@ -109,8 +110,10 @@ export default class Print extends React.Component {
         const doc = iframe.contentWindow.document;
         doc.write(template);
         doc.close();
-        iframe.contentWindow.focus();
-        iframe.contentWindow.print();
+        iframe.onload = ()=>{
+            iframe.contentWindow.focus();
+            iframe.contentWindow.print();
+        }
     };
 
     winPrint = (template) => {
