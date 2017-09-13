@@ -49,7 +49,7 @@ export default class Print extends React.Component {
     componentDidMount() {
         if (this.props.preventDefault) {
             this.prevent = (e) => {
-                if (e.keyCode === 80 && (e.ctrlKey||e.metaKey)) {
+                if (e.keyCode === 80 && (e.ctrlKey || e.metaKey)) {
                     e.preventDefault();
                     this.onPrint();
                 }
@@ -110,10 +110,10 @@ export default class Print extends React.Component {
         const doc = iframe.contentWindow.document;
         doc.write(template);
         doc.close();
-        iframe.onload = ()=>{
+        iframe.onload = () => {
             iframe.contentWindow.focus();
             iframe.contentWindow.print();
-        }
+        };
     };
 
     winPrint = (template) => {
