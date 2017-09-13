@@ -49,7 +49,7 @@ export default class Print extends React.Component {
     componentDidMount() {
         if (this.props.preventDefault) {
             this.prevent = (e) => {
-                if (e.keyCode === 80 && e.ctrlKey) {
+                if (e.keyCode === 80 && (e.ctrlKey||e.metaKey)) {
                     e.preventDefault();
                     this.onPrint();
                 }
