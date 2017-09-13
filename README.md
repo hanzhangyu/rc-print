@@ -8,7 +8,7 @@ Create a `iframe` or `new window` to print a part of page what you want. Conside
 [![Coverage Status](https://coveralls.io/repos/github/hanzhangyu/rc-print/badge.svg?branch=master)](https://coveralls.io/github/hanzhangyu/rc-print?branch=master)
 [![NPM downloads](http://img.shields.io/npm/dm/rc-print.svg?style=flat)](https://npmjs.org/package/rc-print)
 
-[中文前看这里](./README_zh-CN.md)
+[中文请看这里](./README_zh-CN.md)
 
 # 1. Install
 
