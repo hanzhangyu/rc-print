@@ -60,6 +60,7 @@ export default class Print extends React.Component {
 
     componentWillUnmount() {
         this.iframe && document.body.removeChild(this.iframe);
+        this.box && document.body.removeChild(this.box); // 移除懒加载隐藏节点
         this.prevent && document.removeEventListener('keydown', this.prevent);
     }
 
@@ -117,9 +118,13 @@ export default class Print extends React.Component {
     };
 
     winPrint = (template) => {
-        const win = window.open('', '123', this.props.winStyle);
-        win.document.write(template);
-        win.print();
+        const win = window.open('', '', this.props.winStyle);
+        const doc = win.document;
+        doc.write(template);
+        doc.close();
+        win.onload = () => {
+            win.print();
+        };
     };
 
     renderChild = () => {

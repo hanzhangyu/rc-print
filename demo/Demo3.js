@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Print from '../src';
 
 export default function Demo3() {

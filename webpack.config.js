@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var definePlugin = webpack.DefinePlugin;
 
@@ -15,13 +16,17 @@ module.exports = {
       loader: 'babel-loader?presets[]=es2015&presets[]=react&presets[]=stage-0'
     }, {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        loader: ExtractTextPlugin.extract(
+            'style',
+            'css'
+            , { publicPath: '../' })
     }, {
       test: /\.(png|jpg)$/,
       loader: 'url-loader?limit=512'
     }]
   },
   plugins: [
+    new ExtractTextPlugin('bundle.css', { allChunks: true }),
     new uglifyJsPlugin({compress: {warnings: false}}),
     new definePlugin({'process.env': {NODE_ENV: '"production"'}})
   ]
