@@ -1,6 +1,6 @@
 {
   "name": "rc-print",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Create a iframe or new window to print easily",
   "repository": {
     "type": "git",

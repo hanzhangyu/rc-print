@@ -1,3 +1,18 @@
+## `1.0.0`
+
+#### 修复
+- [remote file unload bug](https://github.com/hanzhangyu/rc-print/issues/2)修复文件未加载`新建window方式`就触发打印
+- 修复`懒惰渲染lazyRender`dom节点遗留
+
+#### 改进
+- 新增在线demo页面，修改readme
+
+## `0.1.2`
+
+#### 改进
+- [#edefa02](https://github.com/hanzhangyu/rc-print/commit/edefa02) [Fix bug]: remote style and image unload in Chrome. ([@iineva](https://github.com/iineva))
+- [#9adeb9d](https://github.com/hanzhangyu/rc-print/commit/9adeb9d) Support MacOS Command+P. ([@iineva](https://github.com/iineva))
+
 ## `0.1.0`
 
 > 支持iframe与新窗口两种方式打印。
