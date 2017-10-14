@@ -79,6 +79,7 @@ class demo extends Component {
 | 名称          | 默认值                      | 描述                      |
 | -----------   | ----------------------------| --------------------------- |
 | insertHead    | true              |    Insert the head tag             |
+| ignoreHeadJs    | true              |    Ignore the js files when `insertHead` is enabled             |
 | bodyStyle     | false              |   Insert the style tag in the body (unrecommended method to write style)               | 
 | otherStyle    | undefined              |  Other styles are inserted into the style tag which will be created in the last of head             |
 | isIframe      | true     |   Use iframe if it`s true, otherwise new window will be used     |
@@ -87,6 +88,10 @@ class demo extends Component {
 | title         | undefined                      |  The title of iframe or new window                      |
 | preventDefault| false                      |  Replace the shortcut key of the browser's native print                    |
 | lazyRender    | false                      |  async render                     |
+| clearIframeCache    | false                      |  Clean up the DOM cache.if props changes, it will retain and directly use the DOM left in the last print when choose false                      |
+| singletonCache    | true                      |  Works when clearIframeCache is false. Like Singleton pattern, only one cache will be save when there is multiple component                 |
+| onStart    | function(){}                      |  Begin to print                      |
+| onEnd    | function(){}                      |  Render print page finish       |
 # 4. Feature
 Pick up the core code to separate with `react`, or find it. Besides, welcome to recommend.
 

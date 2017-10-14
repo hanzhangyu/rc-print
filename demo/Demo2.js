@@ -13,7 +13,7 @@ export default class Demo2 extends Component {
         `;
         return (
             <div>
-                <h3>This is Demo2</h3>
+                <h3>This is Demo2&nbsp;&nbsp;<a href="https://github.com/hanzhangyu/rc-print/blob/master/demo/Demo2.js">code</a></h3>
                 Open a new window and don`t inset Head to print something. <br />
                 <button
                     onClick={() => {

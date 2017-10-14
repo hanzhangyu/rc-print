@@ -24,6 +24,7 @@ describe('Test the Print`s index.js', function () {
         expect(component.type()).toEqual('div');
         // props
         expect(component.instance().props.insertHead).toEqual(true);
+        expect(component.instance().props.ignoreHeadJs).toEqual(true);
         expect(component.instance().props.bodyStyle).toEqual(false);
         expect(component.instance().props.otherStyle).toEqual(null);
         expect(component.instance().props.isIframe).toEqual(false);
@@ -33,6 +34,8 @@ describe('Test the Print`s index.js', function () {
         expect(component.instance().props.title).toEqual('this.is a title');
         expect(component.instance().props.preventDefault).toEqual(false);
         expect(component.instance().props.lazyRender).toEqual(false);
+        expect(component.instance().props.clearIframeCache).toEqual(false);
+        expect(component.instance().props.singletonCache).toEqual(true);
     });
     it('test the Print`s in the lazy render', function () {
         const component = shallow(
