@@ -89,7 +89,7 @@ class demo extends Component {
 | preventDefault| false                      |  Replace the shortcut key of the browser's native print                    |
 | lazyRender    | false                      |  async render                     |
 | clearIframeCache    | false                      |  Clean up the DOM cache.if props changes, it will retain and directly use the DOM left in the last print when choose false                      |
-| singletonCache    | true                      |  Works when clearIframeCache is false. Like Singleton pattern, only one cache will be save when there is multiple component                 |
+| singletonCache    | true                      |  Works when clearIframeCache is false. Like Singleton pattern, only one cache will be save when there is multiple component which has a true singletonCache props                |
 | onStart    | function(){}                      |  Begin to print                      |
 | onEnd    | function(){}                      |  Render print page finish       |
 # 4. Feature
