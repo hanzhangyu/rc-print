@@ -147,9 +147,9 @@ export default class Print extends React.Component {
     writeTemplate = (doc) => {
         const {bodyStyle, lazyRender} = this.props;
         if (lazyRender) {
-            doc.write('<html><head></head><body></body></html>');
+            doc.write('<html><head></head><body><div></div></body></html>');
             doc.head.innerHTML = this.getHead();
-            ReactDOM.render(this.renderChild(), doc.body); // React的未来版本可能会异步地呈现组件
+            ReactDOM.render(this.renderChild(), doc.body.getElementsByTagName('div')[0]); // React的未来版本可能会异步地呈现组件
             if (bodyStyle) {
                 const styleTag = document.createElement('style');
                 styleTag.innerHTML = this.getBodyStyle();
@@ -207,9 +207,9 @@ export default class Print extends React.Component {
 
     renderChild = () => {
         const {children, ...restProps} = this.props;
-        return React.Children.only(children, child => cloneElement(child, {
+        return cloneElement(React.Children.only(children), {
             ...restProps,
-        }));
+        });
     };
 
     render() {
