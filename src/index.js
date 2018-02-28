@@ -206,10 +206,8 @@ export default class Print extends React.Component {
     };
 
     renderChild = () => {
-        const {children, ...restProps} = this.props;
-        return cloneElement(React.Children.only(children), {
-            ...restProps,
-        });
+        const {children} = this.props;
+        return cloneElement(React.Children.only(children));
     };
 
     render() {

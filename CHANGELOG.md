@@ -1,3 +1,8 @@
+## `1.0.3`
+
+#### 修复
+- [控制台 大量的警告](https://github.com/hanzhangyu/rc-print/issues/6)修复cloneElement附带props
+
 ## `1.0.2`
 
 #### 修复
