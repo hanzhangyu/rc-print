@@ -87,7 +87,7 @@ class demo extends Component {
 | winStyle      | 'toolbar=no,menubar=no'          |   [The style of new window](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Window_features)          |
 | title         | undefined                      |  The title of iframe or new window                      |
 | preventDefault| false                      |  Replace the shortcut key of the browser's native print                    |
-| lazyRender    | false                      |  async render                     |
+| lazyRender    | false                      |  async render, rendering when printing only                     |
 | clearIframeCache    | false                      |  Clean up the DOM cache.if props changes, it will retain and directly use the DOM left in the last print when choose false                      |
 | singletonCache    | true                      |  Works when clearIframeCache is false. Like Singleton pattern, only one cache will be save when there is multiple component which has a true singletonCache props                |
 | onStart    | function(){}                      |  Begin to print                      |

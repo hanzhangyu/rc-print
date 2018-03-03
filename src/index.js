@@ -116,6 +116,9 @@ export default class Print extends React.Component {
     }
 
     componentWillUnmount() {
+        if (singletonCacheData.iframe === this.iframe) {
+            singletonCacheData.update(null);
+        }
         this.iframe && document.body.removeChild(this.iframe);
         // this.box && document.body.removeChild(this.box); // 移除懒加载隐藏节点
         this.prevent && document.removeEventListener('keydown', this.prevent);
@@ -145,9 +148,10 @@ export default class Print extends React.Component {
     };
 
     writeTemplate = (doc) => {
-        const {bodyStyle, lazyRender} = this.props;
+        const {bodyStyle, lazyRender, isIframe} = this.props;
+        const bodyAttrs = isIframe ? '' : 'onload="window.print()" '; // window时在body上植入事件
         if (lazyRender) {
-            doc.write('<html><head></head><body><div></div></body></html>');
+            doc.write(`<html><head></head><body ${bodyAttrs}><div></div></body></html>`);
             doc.head.innerHTML = this.getHead();
             ReactDOM.render(this.renderChild(), doc.body.getElementsByTagName('div')[0]); // React的未来版本可能会异步地呈现组件
             if (bodyStyle) {
@@ -160,7 +164,7 @@ export default class Print extends React.Component {
             const dom = _dom ? _dom.innerHTML : null;
             doc.write(`<html>
                 <head>${this.getHead()}</head>
-                <body>${dom}${bodyStyle ? `<style>${this.getBodyStyle()}</style>` : ''}</body>
+                <body ${bodyAttrs}>${dom}${bodyStyle ? `<style>${this.getBodyStyle()}</style>` : ''}</body>
             </html>`);
         }
         doc.close();
@@ -188,7 +192,7 @@ export default class Print extends React.Component {
         iframe.contentWindow.print();
         callback && callback(iframe);
 
-        // wait for a new change
+        // wait for a new change, iframe是在本页面，所以loading应该与本页共享
         this.changed = false;
         this.props.onEnd();
     };
@@ -196,13 +200,10 @@ export default class Print extends React.Component {
     winCreateAndPrint = () => {
         const win = window.open('', '', this.props.winStyle);
         this.writeTemplate(win.document);
-        win.onload = () => {
-            win.print();
 
-            // wait for a new change
-            this.changed = false;
-            this.props.onEnd();
-        };
+        // wait for a new change
+        this.changed = false;
+        this.props.onEnd();
     };
 
     renderChild = () => {

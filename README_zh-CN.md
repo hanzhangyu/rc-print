@@ -86,7 +86,7 @@ class demo extends Component {
 | winStyle      | 'toolbar=no,menubar=no'          |   [新窗口的初始样式](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Window_features)          |
 | title         | undefined                      |  iframe或者新建窗口的title                     |
 | preventDefault| false                      |  是否替换浏览器原生的打印快捷键                      |
-| lazyRender    | false                      |  异步渲染                      |
+| lazyRender    | false                      |  异步渲染，只在打印时渲染                      |
 | clearIframeCache    | false                      |  是否清理dom缓存。否的情况下，如props为改变将保留并直接使用上次打印留下的dom                      |
 | singletonCache    | true                      |  当clearIframeCache关闭时生效。类单例模式，当界面有多个设置了singletonCache打印组件时，最多允许保留一个缓存                      |
 | onStart    | function(){}                      |  打印渲染开始                      |

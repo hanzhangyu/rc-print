@@ -1,3 +1,9 @@
+## `1.0.4`
+
+#### 修复
+- [在新窗口模式下，ie不会弹出打印项 谷歌正常](https://github.com/hanzhangyu/rc-print/issues/8)修复IEonload事件触发
+- [单页面中的使用问题](https://github.com/hanzhangyu/rc-print/issues/7)清除闭包中的缓存
+
 ## `1.0.3`
 
 #### 修复
